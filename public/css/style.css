@@ -1,0 +1,167 @@
+#page-title {
+    text-align: center;
+    font-size: 3.6em;
+    color: white;
+    text-shadow: 3px 3px 0.5px black;
+    opacity: 0.9;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+body::before{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    background: url('https://images.pexels.com/photos/585752/pexels-photo-585752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') ;
+    opacity: 0.8;
+    z-index: -1;
+    background-size:cover;
+    background-position: center;
+
+}
+.container{
+    overflow-y: scroll;
+    height: 83vh;
+    cursor: pointer;
+    
+
+}
+.card{
+    background-color: #ffffff45;
+    height:290px;
+    width:1100px;
+
+}
+.card:hover {
+    
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.979);
+    transition: 0.1s;
+    border: none;
+    height:290px;
+    width:1100px;
+
+}
+h4,label{
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 0.5px black;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.2em;
+    
+}
+.card-subtitle
+{
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Roboto Mono', monospace;
+}
+.card-text{
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Roboto Mono', monospace;
+}
+#crud{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    font-family: 'Roboto Mono', monospace;
+    font-style: italic;
+}
+input,textarea{
+background-color: blanchedalmond;
+outline: none;
+font-family: 'Roboto Mono', monospace;
+font-style: italic;
+font-weight: 400;
+border: none;
+
+}
+#options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    width: 20vh;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+       
+}
+#navbar::before{
+    content: "";
+    background-color: #080000;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Logo image */
+#logo{
+    margin: 10px 17px;
+}
+#logo img {
+    height: 64px;
+    margin: 2px 5px;
+}
+   
+ 
+ /* List Styling */
+#options
+{
+    display: flex;
+    /* align-items: center; */
+    /* align-content: center; */
+}
+#navbar ul li{
+    list-style: none;
+  
+    font-size: 1.3rem;
+   font-family: 'Roboto Mono', monospace;
+    /* font-style: italic; */
+    /* font-weight: bold; */
+    
+}
+#navbar ul li a{
+   text-decoration: none;
+   color:white;
+   display: block;
+   border-radius: 23px;
+   padding: 21px 36px;
+  font-family: 'Roboto Mono', monospace;
+  
+
+}
+#navbar ul li a:hover
+{
+    background-color: greenyellow;
+    color: black;
+    font-weight: 400;
+    cursor:pointer;
+}
+/*#logout{
+    margin-right:4px;
+    width: 6vw;
+    
+}*/

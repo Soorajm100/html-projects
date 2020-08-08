@@ -27,7 +27,7 @@ body::before{
 }
 .card{
     background-color: #ffffff45;
-    height:350px;
+    height:250px;
     width:1100px;
 
 }
@@ -36,7 +36,7 @@ body::before{
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.979);
     transition: 0.1s;
     border: none;
-    height:350px;
+    height:250px;
     width:1100px;
 
 }

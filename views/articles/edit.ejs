@@ -10,12 +10,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../js/main.js"></script>
     <link rel="stylesheet" href="../../css/nav2.css">
     <link rel="stylesheet" href="../../css/nav.css">
-
-
+    <link rel="stylesheet" href="../../css/home.css">
 </head>
+
 <script type="text/javascript">
 
     function openNav() { 
@@ -27,14 +30,7 @@
     }
     
     </script>
-
-<body>
-    
-
-
-
-
-    
+    <body>
     <span class="menu-icon" onclick="openNav()">&#9776;</span>
     <div class="menu-container" id="myNav">
         <a href="javascript:void(0)" class="closebtn"
@@ -48,16 +44,21 @@
             <a href="/articles">All Articles</a>
             <a href="/articles/myArticles">My Articles</a>
             <a href="/articles/new">New Article</a>
-            <a href="/users/logout" id="logout">Logout</a>
+            <a href="/users/logout" >Logout</a>
     </div>
     </div>
-    <div id="topframe">
-        <h1 class="mb-4" id="page-title">Edit Article</h1>
-          </div>
-          <br/><br/><br/>
+
+
+
+
+
+<div id="topframe">
+    <h1 class="mb-4" id="page-title">Edit Article</h1></div>
+
+  <br/><br/><br/>
 
     <div class="container">
-      
+   
 
         <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
             <%- include("_formFields") %>
@@ -73,6 +74,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+        <div id="bottomframe"></div>
 </body>
 
 

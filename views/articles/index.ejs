@@ -10,11 +10,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/nav2.css">
-    <link rel="stylesheet" href="../css/nav.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../css/nav2.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/new.css">
 </head>
-
 <script type="text/javascript">
 
     function openNav() { 
@@ -26,8 +29,8 @@
     }
     
     </script>
+
 <body>
-    
     <span class="menu-icon" onclick="openNav()">&#9776;</span>
     <div class="menu-container" id="myNav">
         <a href="javascript:void(0)" class="closebtn"
@@ -41,20 +44,22 @@
             <a href="/articles">All Articles</a>
             <a href="/articles/myArticles">My Articles</a>
             <a href="/articles/new">New Article</a>
-            <a href="/users/logout" id="logout">Logout</a>
+            <a href="/users/logout" >Logout</a>
     </div>
     </div>
-    <br/><br/><br/><br/>
-    
+  <div id="topframe">
+    <h1 class="mb-1" id="page-title">Type-0</h1>
+</div>
+<br/><br/><br/>
     <div class="container" style="overflow-y: auto;">
         <div class="head">
-            <div id="topframe">
-            <h1 class="mb-1" id="page-title">Type-0</h1>
-            </div>
+            
+
         </div>
 
         <a href="/articles/new/" class="btn btn-success">New Article</a>
         <% articles.forEach(article =>{ %>
+               
         <div class="card mt-4">
             <div class="card-body">
                 <div class="card-title">
@@ -66,15 +71,92 @@
                 <div class="card-subtitle mb-2">
                     -by <%= article.author %>
                 </div>
+
                 <div class="card-text mb-2">
                     <%= article.description %>
                 </div>
-                <div id="crud"><a href="/articles/<%= article.slug %>" class="btn btn-primary mr-3 ml-3 mt-4">Read
+
+                <div id="crud">
+
+                    <div id="like-unlike">
+
+                        <div class="like-unlike">
+
+                            <button width="20.0" height=20.0 class="ml-3 mr-3 mt-4" id="upvote-button"
+                                data-id="<%= article.title %>">
+                                <img width="20.0" height="20.0" src="../../assets/upvote.jpeg" alt="">
+                                <%= article.upvotes.length %>
+
+                            </button>
+                        </div>
+                        <div class="like-unlike">
+
+                            <button width="20.0" height=20.0 class="ml-3 mr-3 mt-4" id="downvote-button"
+                                data-id="<%=article.title %>">
+                                <img src="../../assets/downvote.png" alt="" width="20.0" height="20.0"
+                                    data-id="<%= article.title %>">
+                                <%= article.downvotes.length %>
+                            </button>
+                        </div>
+                        <div class="like-unlike">
+
+                            <button width="20.0" height=20.0 class="ml-3 mr-3 mt-4" id="comment-button">
+                                <img src="../../assets/comments.jpeg" alt="" width="20.0" height="20.0">
+                                <%= article.comments.length %>
+                            </button>
+
+                        </div>
+                    </div>
+                    <a href="/articles/<%= article.slug %>" class="btn btn-primary mr-3 ml-3 mt-4">Read
                         More</a>
 
                 </div>
+
+            </div>
+            <div class="mt-24 mr-4 ml-4" id="comment-box" style="overflow-y: auto; margin: 20px 0px;">
+                <form action="/articles/<%= article.id %>" method="POST">
+                    <div class="form-group " style="display:flex;flex-direction: row;">
+
+                        <input type="text" name="comment" id="<%=article.id %>" class="form-control mb-10 mt-10"
+                            placeholder="Write a comment">
+                           
+                        <button type="submit" id="add-comment" class="btn btn-primary"
+                            data-id="<%=article.id %>">Send</button>
+                         
+                    </div>
+                </form>
+                <br/> <br/>
+                
+                <div class="card-title">
+                   
+                </div>
+
+                <% article.comments.forEach(comment=>{ %>
+                    
+                <div class="card" class="each-comment"
+                    style="display: flex; flex-direction: row; justify-content: start ;height: auto;margin: 5px 2px;">
+
+
+                    <div class="profile pr-0">
+                        <img src="../../assets/profile.png" class="mt-2" width="20%" height="40px" alt="...">
+                        <%= comment.name %>
+                    </div>
+                    
+
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: start; font-size: 1.2em;">
+                            <%=comment.comment %>
+                        </p>
+                    </div>
+                 
+                </div>
+                <br/>
+
+                <% }) %>
+
             </div>
         </div>
+
         <%}) %>
     </div>
 
@@ -87,6 +169,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+        <div id="bottomframe"></div>
 </body>
 
 
